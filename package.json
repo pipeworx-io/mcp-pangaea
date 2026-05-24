@@ -1,0 +1,20 @@
+{
+  "name": "@pipeworx/mcp-pangaea",
+  "version": "0.1.0",
+  "description": "PANGAEA MCP — earth + environmental science data publisher.",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "pangaea"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pipeworx-io/mcp-pangaea"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

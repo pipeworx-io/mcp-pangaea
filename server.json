@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/pangaea",
+  "title": "Pangaea",
+  "description": "PANGAEA MCP — earth + environmental science data publisher.",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/pangaea",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-pangaea",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/pangaea/mcp"
+    }
+  ]
+}
