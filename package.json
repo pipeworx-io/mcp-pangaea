@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-pangaea",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "PANGAEA MCP — earth + environmental science data publisher.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-pangaea": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "pangaea"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-pangaea.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/pangaea",
   "pipeworx": {
-    "sourceHash": "v1-2981fd776544b5f4b2aeabf3a7bb526ab09433f810d067b25633c3aed8c4bee3",
-    "sourceCommit": "f54ad77e789f27fe393978f9c080b5b18c87bb4f"
+    "mode": "gateway",
+    "slug": "pangaea",
+    "gatewaySlug": "pangaea",
+    "sourceHash": "v1-c1c8da58babfad4f56cba0c5c96635a972628b63be0d744d97ccd734bdf48af2",
+    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
   }
 }

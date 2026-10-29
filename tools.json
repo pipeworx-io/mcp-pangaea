@@ -1,0 +1,96 @@
+[
+  {
+    "name": "search",
+    "description": "Full-text search of PANGAEA earth/environmental science datasets (oceanography, climate, geology, biology, paleo). Returns dataset title, DOI, authors, year, and topics. Use for questions like \"ocean temperature datasets\", \"Arctic sea ice cores\", \"CO2 flux measurements\".",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Free-text search, e.g. \"ocean temperature\", \"Arctic sea ice\". Omit to browse everything."
+        },
+        "size": {
+          "type": "number",
+          "description": "Results to return (default 20, max 50)."
+        },
+        "from": {
+          "type": "number",
+          "description": "Offset for pagination (default 0)."
+        }
+      }
+    }
+  },
+  {
+    "name": "dataset",
+    "description": "Full metadata for one PANGAEA dataset by its numeric ID (e.g. 921708).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "description": "PANGAEA dataset ID, e.g. 921708."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "dataset_by_doi",
+    "description": "Full metadata for one PANGAEA dataset by DOI (e.g. \"10.1594/PANGAEA.921708\" or the doi.org URL).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "doi": {
+          "type": "string",
+          "description": "PANGAEA DOI, e.g. \"10.1594/PANGAEA.921708\"."
+        }
+      },
+      "required": [
+        "doi"
+      ]
+    }
+  },
+  {
+    "name": "recent",
+    "description": "Most recently published PANGAEA datasets (newest DOI registrations first).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "number",
+          "description": "How many (default 20, max 50)."
+        },
+        "days": {
+          "type": "number",
+          "description": "Only datasets registered within the last N days (optional)."
+        }
+      }
+    }
+  },
+  {
+    "name": "facets",
+    "description": "Aggregate matching datasets by a facet — top values of a category field (e.g. \"agg-mainTopic\", \"agg-author\", \"agg-method\", \"agg-location\", \"agg-campaign\") with counts. Optionally scoped to a full-text query.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "type": "string",
+          "description": "A keyword facet field, e.g. \"agg-mainTopic\", \"agg-author\"."
+        },
+        "query": {
+          "type": "string",
+          "description": "Optional full-text scope for the aggregation."
+        },
+        "size": {
+          "type": "number",
+          "description": "Top-N buckets (default 25)."
+        }
+      },
+      "required": [
+        "field"
+      ]
+    }
+  }
+]
